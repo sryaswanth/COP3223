@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int add ( int );
+int addRecursive ( int );
+
+int main()
+{
+    int number;
+
+    printf ("Enter your natural number: ");
+    scanf("%d", &number);
+
+
+    printf("The sum is %d\n", add(number));
+    printf("The sum is %d\n", addRecursive(number));
+
+    return 0;
+}
+
+int add ( int n )
+{
+
+    int counter , sum = 0;
+
+    for ( counter = 1; counter <= n ; counter++)
+        sum = sum + counter;
+
+    return sum;
+}
+
+int addRecursive ( int n )
+{
+
+    if ( n == 0 ) return 0;
+    return n + addRecursive ( n - 1);
+
+}
