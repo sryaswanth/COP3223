@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void getTheTwoNumbers ( int *, int * );
+void calculation (  int , int , int * pSum, int * pProduct  , float * pAverage );
+void print ( int , int  , int  sum, int product  , float  average );
+
+
+int main ()
+{
+    int a ,b;
+    int sum, product;
+    float average;
+
+    getTheTwoNumbers ( &a, &b);
+    calculation ( a, b, &sum , &product, &average);
+
+    print ( a , b, sum , product, average );
+
+    return 0;
+
+}
+
+void getTheTwoNumbers ( int * pOne, int * pTwo )
+{
+    printf ("Enter your two integers: ");
+    scanf ("%d%d", pOne, pTwo);
+}
+
+void calculation (  int one, int two, int * pSum, int * pProduct  , float * pAverage )
+{
+    *pSum = one + two;
+    *pProduct = one * two;
+    *pAverage = (float) one/two;
+}
+void print ( int one, int  two, int  sum, int product  , float  average )
+{
+    printf ("\t%d + %d = %d\n", one, two , sum);
+    printf ("\t%d * %d = %d\n", one, two , product);
+    printf ("\tAvg (%d,%d) = %.2f\n", one, two , average);
+}
